@@ -3,9 +3,12 @@
 URLS="$@"
 i=1
 
+echo "Enter pdf name:"
+read name
+
 for pdfURL in $URLS
 do 	
-			documentName="pdf$((i++)) "
+			documentName="$name$((i++)) "
 			echo $documentName
 			curl -o $documentName $pdfURL
 			
